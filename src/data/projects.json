@@ -1,0 +1,16 @@
+[
+  {
+    "title": "Rabafast",
+    "imageSrc": "/rabafast_dashboard.png",
+    "description": "Rabafast is a multi-currency payment platform that enables merchants to do cross-border payouts, my responsibility was to build the dashboard which was a web based application that was used to manage the payments and the customers",
+    "technologies": ["React", "Next.js", "Tailwind CSS", "React Query", "Shadcn UI", "Zustand", "Supabase", "Vercel", "Framer Motion"],
+    "link": "https://rabafast.com"
+},
+  {
+    "title": "Dot Business",
+    "imageSrc": "/dotbusiness_dashboard.png",
+    "description": "Dot Business is a business banking platform that enables businesses to manage their finances, my responsibility was to build the dashboard which was a web based application that was used to manage the finances and the customers",
+    "technologies": ["React", "Next.js", "Tailwind CSS", "React Query", "Shadcn UI", "Zustand", "Supabase", "Vercel", "Framer Motion"],
+    "link": "https://businessbanking.dot.ai"
+  }
+]

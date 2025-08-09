@@ -1,0 +1,20 @@
+---
+import ContentList from "../ContentList";
+import Contact from "../Contact";
+---
+
+<div class="w-[50%] flex flex-col pt-[72px] h-screen sticky top-0">
+    <h2 class="text-6xl xl:text-8xl font-bold mb-4">
+        Ango Jeffrey
+    </h2>
+    <h4 class="text-2xl font-medium mb-4">
+        Senior Frontend Engineer
+    </h4>
+    <p class="text-sm lg:text-base mb-10">
+        Building scalable, user friendly and elegant web and mobile applications.
+    </p>
+    <Contact />
+    <ContentList
+    client:load
+    />
+</div>
