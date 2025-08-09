@@ -1,17 +1,41 @@
 ---
 import Hero from '../components/sections/Hero.astro';
-import Introduction from '../components/sections/Introduction.astro';
+import About from '../components/sections/About.astro';
 import Layout from '../layouts/Layout.astro';
+import ProjectCard from "../components/cards/ProjectCard";
+import projects from "../data/projects.json";
+import articles from "../data/articles.json";
+import ArticleCard from "../components/cards/ArticleCard";
 import '../styles/global.css';
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+
 ---
 
 <Layout>
 <div class="w-full container mx-auto px-4 lg:px-10 ">
 <div class="w-full flex gap-10">
 	<Hero />
-	<Introduction />
+	<div class="w-[50%]">
+		<About />
+		<section
+		id="projects"
+		class="w-full flex flex-col gap-10 py-10">
+			{projects.map((project) => (
+			  <ProjectCard
+				{...project}
+			  />
+			))}
+		</section>
+		<section
+		id="articles"
+		class="w-full flex flex-col gap-10 py-10">
+			{articles.map((article) => (
+			  <ArticleCard
+				{...article}
+			  />
+			))}
+		</section>
+	</div>
+
 </div>
 </div>
 </Layout>

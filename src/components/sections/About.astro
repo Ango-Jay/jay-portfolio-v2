@@ -1,11 +1,6 @@
----
-import ProjectCard from "../cards/ProjectCard";
-import projects from "../../data/projects.json";
-import articles from "../../data/articles.json";
-import ArticleCard from "../cards/ArticleCard";
----
-
-<div class="w-[50%] pt-[72px] flex flex-col gap-4">
+<section
+id="about"
+class="w-full pt-[72px] flex flex-col gap-4">
   <p class="text-[15px] sm:text-base text-gray-500">
     I’m a software engineer with over 5 years experience in frontend
     development. My journey into tech began way back in the university, where I
@@ -42,18 +37,5 @@ class="pt-4"
   <!-- <p class="py-[600px]">
 
   </p> -->
-  <div class="w-full flex flex-col gap-10 py-10">
-    {projects.map((project) => (
-      <ProjectCard
-        {...project}
-      />
-    ))}
-</div>
-<div class="w-full flex flex-col gap-10 py-10">
-    {articles.map((article) => (
-      <ArticleCard
-        {...article}
-      />
-    ))}
-</div>
-</div>
+
+</section>
