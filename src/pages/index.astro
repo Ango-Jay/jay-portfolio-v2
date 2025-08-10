@@ -11,14 +11,17 @@ import '../styles/global.css';
 ---
 
 <Layout>
-<div class="w-full container mx-auto px-4 lg:px-10 ">
-<div class="w-full flex gap-10">
+<div class="w-full container mx-auto px-4 sm:px-6 lg:px-10 ">
+<div class="w-full flex flex-col lg:flex-row gap-10">
 	<Hero />
-	<div class="w-[50%]">
+	<div class="w-full lg:w-[50%]">
 		<About />
 		<section
 		id="projects"
 		class="w-full flex flex-col gap-10 py-10">
+		<h4 class="flex lg:hidden uppercase text-sm font-medium">
+			Projects
+		  </h4>
 			{projects.map((project) => (
 			  <ProjectCard
 				{...project}
@@ -28,6 +31,9 @@ import '../styles/global.css';
 		<section
 		id="articles"
 		class="w-full flex flex-col gap-10 py-10">
+		<h4 class="flex lg:hidden uppercase text-sm font-medium">
+			Articles
+		  </h4>
 			{articles.map((article) => (
 			  <ArticleCard
 				{...article}

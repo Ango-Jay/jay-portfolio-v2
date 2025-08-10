@@ -13,7 +13,7 @@ const ContentList = () => {
                 });
             },
             {
-                threshold: 0.7, // Trigger when 70% of the section is visible
+                threshold: 0.5, // Trigger when 50% of the section is visible
                 rootMargin: '-10% 0px -10% 0px' // Adjust trigger point
             }
         );
@@ -41,7 +41,7 @@ const ContentList = () => {
     };
 
     return (
-        <div className="w-fit flex flex-col gap-4 mt-10">
+        <div className="w-fit hidden lg:flex flex-col gap-4 mt-10">
             {items.map((item) => (
                 <a
                     href={`#${item.id}`}
@@ -50,10 +50,10 @@ const ContentList = () => {
                         activeSection === item.id ? 'opacity-100' : 'opacity-70'
                     }`}
                     onClick={(e) => handleSmoothScroll(e, item.id)}>
-                    <div className={`w-10 group-hover:w-20 border-t border-t-black transition-all duration-300 ${
+                    <div className={`w-10 group-hover:w-20 border-t border-t-black lg:group-hover:border-t-light-purple lg:group-hover:text-light-purple transition-all duration-300 ${
                         activeSection === item.id ? 'w-20' : ''
                     }`}></div>
-                    <h4 className="text-black text-sm uppercase">
+                    <h4 className="text-black text-sm uppercase lg:group-hover:text-light-purple transition-all duration-300">
                         {item.title}
                     </h4>
                 </a>

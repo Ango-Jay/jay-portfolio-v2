@@ -12,5 +12,12 @@
     "description": "Dot Business is a business banking platform that enables businesses to manage their finances, my responsibility was to build the dashboard which was a web based application that was used to manage the finances and the customers",
     "technologies": ["React", "Next.js", "Tailwind CSS", "React Query", "Shadcn UI", "Zustand", "Supabase", "Vercel", "Framer Motion"],
     "link": "https://businessbanking.dot.ai"
+  },
+  {
+    "title":"Qshelter",
+    "imageSrc":"/qshelter.png",
+    "description":"Qshelter is a platform that enables businesses to manage their finances, my responsibility was to build the dashboard which was a web based application that was used to manage the finances and the customers",
+    "technologies":["React","Next.js","Tailwind CSS","React Query","Shadcn UI","Zustand","Supabase","Vercel","Framer Motion"],
+    "link":"https://qshelter.ng"
   }
 ]

@@ -3,3 +3,8 @@
 button {
     cursor: pointer;
 }
+
+@theme {
+    --color-light-purple: #B030B0;
+    --color-dark-purple: #202040;
+}
