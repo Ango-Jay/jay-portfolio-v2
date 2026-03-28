@@ -19,5 +19,12 @@
     "description":"Qshelter is a platform that enables businesses to manage their finances, my responsibility was to build the dashboard which was a web based application that was used to manage the finances and the customers",
     "technologies":["React","Next.js","Tailwind CSS","React Query","Shadcn UI","Zustand","Supabase","Vercel","Framer Motion"],
     "link":"https://qshelter.ng"
+  },
+  {
+    "title": "MailMaker AI",
+    "imageSrc": "/mailmaker_ai.png",
+    "description": "MailMaker AI is a modern, web-based email template builder designed to help users create responsive, high-quality emails without writing code. It leverages MJML (Mailjet Markup Language) under the hood to ensure that the generated HTML is compatible across all major email clients.",
+    "technologies": ["React", "Next.js", "MJML", "Tailwind CSS", "React Query",  "Zustand", "Framer Motion"],
+    "link": "https://business-email-generator.vercel.app/"
   }
 ]
