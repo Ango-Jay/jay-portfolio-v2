@@ -61,7 +61,7 @@ const ContentList = () => {
         </div>
     )
 }
-const items = [
+export const items = [
     {
         title: "About",
         id: "about"
@@ -78,5 +78,5 @@ const items = [
         title: "Articles",
         id: "articles"
     }
-]
+];
 export default ContentList;

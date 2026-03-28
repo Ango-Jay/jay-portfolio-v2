@@ -1,5 +1,6 @@
 ---
 import Footer from "../components/sections/Footer.astro";
+import Header from "../components/sections/Header";
 ---
 
 <!doctype html>
@@ -13,6 +14,7 @@ import Footer from "../components/sections/Footer.astro";
 
 	</head>
 	<body>
+		<Header client:load />
 		<slot />
 		<Footer />
 	</body>

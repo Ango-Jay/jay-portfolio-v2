@@ -4,10 +4,42 @@ import About from '../components/sections/About.astro';
 import Layout from '../layouts/Layout.astro';
 import ProjectCard from "../components/cards/ProjectCard";
 import projects from "../data/projects.json";
-import articles from "../data/articles.json";
 import ArticleCard from "../components/cards/ArticleCard";
 import '../styles/global.css';
 
+const DEVTO_USERNAME = import.meta.env.PUBLIC_DEVTO_USERNAME ?? 'angojay';
+const DEVTO_PROFILE_URL = `https://dev.to/${DEVTO_USERNAME}`;
+
+type DevToArticle = {
+	title: string;
+	url: string;
+	cover_image: string | null;
+	social_image: string;
+};
+
+let articles: Array<{
+	title: string;
+	imageSrc: string;
+	platform: string;
+	link: string;
+}> = [];
+
+try {
+	const res = await fetch(
+		`https://dev.to/api/articles?username=${encodeURIComponent(DEVTO_USERNAME)}&per_page=5`
+	);
+	if (res.ok) {
+		const data: DevToArticle[] = await res.json();
+		articles = data.slice(0, 5).map((a) => ({
+			title: a.title,
+			imageSrc: a.cover_image ?? a.social_image ?? '/dev_to_logo.png',
+			platform: 'Dev.to',
+			link: a.url,
+		}));
+	}
+} catch {
+	// build continues with no articles if the API is unreachable
+}
 ---
 
 <Layout>
@@ -33,12 +65,22 @@ import '../styles/global.css';
 		class="w-full flex flex-col gap-10 py-10">
 		<h4 class="flex lg:hidden uppercase text-sm font-medium">
 			Articles
-		  </h4>
+		</h4>
 			{articles.map((article) => (
 			  <ArticleCard
 				{...article}
 			  />
 			))}
+			<div class="flex w-full justify-center pt-2">
+				<a
+					href={DEVTO_PROFILE_URL}
+					target="_blank"
+					rel="noopener noreferrer"
+					class="text-sm font-medium text-light-purple hover:underline"
+				>
+					View more
+				</a>
+			</div>
 		</section>
 	</div>
 
