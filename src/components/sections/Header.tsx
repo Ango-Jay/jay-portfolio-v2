@@ -44,14 +44,14 @@ const Header = () => {
 
     return  (
     <div className={
-        `lg:hidden w-full fixed top-0 left-0 right-0 z-50 py-6 bg-white border-b border-gray-200 ${activeSection ? 'visible' : 'invisible'}`
+        `lg:hidden w-full fixed top-0 left-0 right-0 z-50 py-6 bg-surface border-b border-gray-200 dark:bg-night dark:border-night-border ${activeSection ? 'visible' : 'invisible'}`
     }>
         <div className="w-full container mx-auto px-4 sm:px-6 lg:px-10">
             <div className="w-full flex items-center justify-between">
             <a
             href={`#${activeSection}`}
             key={activeSection}
-            className="flex lg:hidden uppercase text-sm font-medium text-black">
+            className="flex lg:hidden uppercase text-sm font-medium text-ink dark:text-zinc-100">
                 {activeSection}
             </a>
             </div>

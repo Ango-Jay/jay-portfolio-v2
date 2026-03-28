@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { cn } from '../lib/utils';
 
 const ContentList = () => {
     const [activeSection, setActiveSection] = useState<string>('');
@@ -50,10 +51,13 @@ const ContentList = () => {
                         activeSection === item.id ? 'opacity-100' : 'opacity-70'
                     }`}
                     onClick={(e) => handleSmoothScroll(e, item.id)}>
-                    <div className={`w-10 group-hover:w-20 border-t border-t-black lg:group-hover:border-t-light-purple lg:group-hover:text-light-purple transition-all duration-300 ${
-                        activeSection === item.id ? 'w-20' : ''
+                    <div className={`w-10 group-hover:w-20 border-t border-t-ink dark:border-t-zinc-100 lg:group-hover:border-t-light-purple lg:group-hover:text-light-purple transition-all duration-300 ${
+                        activeSection === item.id ? 'w-20 border-t-light-purple dark:border-t-light-purple' : ''
                     }`}></div>
-                    <h4 className="text-black text-sm uppercase lg:group-hover:text-light-purple transition-all duration-300">
+                    <h4 className={cn(
+                        "text-sm uppercase text-ink dark:text-zinc-100 lg:group-hover:text-light-purple transition-all duration-300",
+                        activeSection === item.id && 'text-light-purple dark:text-light-purple' 
+                    )}>
                         {item.title}
                     </h4>
                 </a>

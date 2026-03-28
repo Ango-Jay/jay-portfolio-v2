@@ -1,6 +1,7 @@
 ---
 import Footer from "../components/sections/Footer.astro";
 import Header from "../components/sections/Header";
+import ThemePicker from "../components/ThemePicker";
 ---
 
 <!doctype html>
@@ -11,9 +12,33 @@ import Header from "../components/sections/Header";
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro Basics</title>
-
+		<script is:inline>
+			(function () {
+				try {
+					var stored = localStorage.getItem("theme");
+					if (stored === "system") {
+						localStorage.removeItem("theme");
+						stored = null;
+					}
+					var dark =
+						stored === "dark"
+							? true
+							: stored === "light"
+								? false
+								: window.matchMedia("(prefers-color-scheme: dark)").matches;
+					var root = document.documentElement;
+					root.dataset.theme = dark ? "dark" : "light";
+					root.classList.toggle("dark", dark);
+				} catch (e) {
+					var r = document.documentElement;
+					r.dataset.theme = "light";
+					r.classList.remove("dark");
+				}
+			})();
+		</script>
 	</head>
-	<body>
+	<body class="min-h-screen bg-surface text-ink antialiased transition-colors duration-200 dark:bg-night dark:text-zinc-100">
+		<ThemePicker client:load />
 		<Header client:load />
 		<slot />
 		<Footer />

@@ -1,10 +1,31 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 button {
     cursor: pointer;
 }
 
+html {
+    color-scheme: light;
+}
+
+html.dark {
+    color-scheme: dark;
+}
+
+/*
+ * Theme palette → Tailwind: bg-ink, text-ink, border-ink, stroke-ink, fill-ink, bg-surface, bg-night, …
+ * TS mirror: `src/theme/colors.ts`
+ * — ink #090040: primary dark (no black)
+ * — night*: dark-mode surfaces (no #000)
+ */
 @theme {
-    --color-light-purple: #B030B0;
+    --color-ink: #090040;
+    --color-light-purple: #b030b0;
     --color-dark-purple: #202040;
+    --color-surface: #ffffff;
+    --color-night: #0c0630;
+    --color-night-raised: #160d45;
+    --color-night-border: #2a2160;
 }
