@@ -5,29 +5,51 @@ const ContentList = () => {
     const [activeSection, setActiveSection] = useState<string>('');
 
     useEffect(() => {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        setActiveSection(entry.target.id);
-                    }
-                });
-            },
-            {
-                threshold: 0.5, // Trigger when 50% of the section is visible
-                rootMargin: '-10% 0px -10% 0px' // Adjust trigger point
+        const pickActiveSection = () => {
+            if (window.scrollY <= 50) {
+                setActiveSection('about');
+                return;
             }
-        );
 
-        // Observe all sections
-        items.forEach((item) => {
-            const element = document.getElementById(item.id);
-            if (element) {
-                observer.observe(element);
+            const vh = window.innerHeight;
+            let bestId = items[0]?.id ?? '';
+            let bestVisible = 0;
+
+            for (const item of items) {
+                const el = document.getElementById(item.id);
+                if (!el) continue;
+                const r = el.getBoundingClientRect();
+                const visible = Math.max(
+                    0,
+                    Math.min(r.bottom, vh) - Math.max(r.top, 0)
+                );
+                if (visible > bestVisible) {
+                    bestVisible = visible;
+                    bestId = item.id;
+                }
             }
-        });
 
-        return () => observer.disconnect();
+            if (bestVisible > 0) {
+                setActiveSection(bestId);
+            }
+        };
+
+        pickActiveSection();
+
+        let raf = 0;
+        const onScrollOrResize = () => {
+            cancelAnimationFrame(raf);
+            raf = requestAnimationFrame(pickActiveSection);
+        };
+
+        window.addEventListener('scroll', onScrollOrResize, { passive: true });
+        window.addEventListener('resize', onScrollOrResize);
+
+        return () => {
+            cancelAnimationFrame(raf);
+            window.removeEventListener('scroll', onScrollOrResize);
+            window.removeEventListener('resize', onScrollOrResize);
+        };
     }, []);
 
     const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {

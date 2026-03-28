@@ -17,7 +17,7 @@ const ProjectCard = ({
       href={link}
       target="_blank"
       rel="noopener noreferrer"
-      className="w-full flex flex-col lg:flex-row items-center lg:items-start gap-6 border border-gray-200 rounded-lg p-4 transition-all duration-300 group lg:hover:border-light-purple dark:border-night-border dark:lg:hover:border-light-purple"
+      className="w-full flex flex-col lg:flex-row items-center lg:items-start gap-6 border border-ink/20 rounded-lg p-4 transition-all duration-300 group lg:hover:border-light-purple dark:border-night-border dark:lg:hover:border-light-purple"
     >
       <div className="w-[120px] h-[80px] shrink-0 rounded-lg overflow-hidden border border-gray-200 dark:border-night-border">
         <img
@@ -50,7 +50,7 @@ const ProjectCard = ({
           {technologies.map((technology) => (
             <span
               key={technology}
-              className="rounded-full border border-ink bg-ink px-2 py-1 text-xs text-white transition-colors duration-300 sm:text-[13px] dark:border-white dark:text-white group-hover:border-light-purple group-hover:bg-white group-hover:text-ink dark:group-hover:bg-ink dark:group-hover:text-light-purple"
+              className="rounded-full border border-ink bg-white dark:bg-ink px-2 py-1 text-xs text-ink transition-colors duration-300 sm:text-[13px] dark:border-white dark:text-white group-hover:border-light-purple group-hover:bg-white group-hover:text-ink dark:group-hover:bg-ink dark:group-hover:text-light-purple"
             >
               {technology}
             </span>
