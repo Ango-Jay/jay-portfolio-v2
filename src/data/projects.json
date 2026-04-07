@@ -26,5 +26,12 @@
     "description": "MailMaker AI is a modern, web-based email template builder designed to help users create responsive, high-quality emails without writing code. It leverages MJML (Mailjet Markup Language) under the hood to ensure that the generated HTML is compatible across all major email clients.",
     "technologies": ["React", "Next.js", "MJML", "Tailwind CSS", "React Query",  "Zustand", "Framer Motion"],
     "link": "https://business-email-generator.vercel.app/"
+  },
+  {
+    "title": "Nebula PDF Generator",
+    "imageSrc": "/nebula-pdf-engine.png",
+    "description": "Nebula PDF Engine: A fast, lightweight, JSX-driven PDF generator with a smart layout engine, automatic pagination, and first-class table support.",
+    "technologies": ["Typescript", "Preact"],
+    "link": "https://www.npmjs.com/package/nebula-pdf-engine"
   }
 ]
