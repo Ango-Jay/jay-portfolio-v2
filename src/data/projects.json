@@ -5,9 +5,6 @@
     "description": "Rabafast is a multi-currency payment platform for businesses (SMEs and larger companies) to run cross-border payouts. It supports multicurrency wallets, foreign-exchange conversion, and crypto payouts such as USDC. As senior frontend engineer, I spearheaded frontend development and delivered the web dashboard used to manage payments, wallets, and customers.",
     "technologies": ["React", "Next.js", "Tailwind CSS", "TanStack Query", "Redux Toolkit", "Shadcn UI", "Framer Motion"],
     "link": "https://app.rabafast.com",
-    "contributions": [],
-    "results": [],
-    "challenges": [],
     "caseStudy": {
       "slug": "rabafast",
       "challenge": "Businesses sending money across borders needed one place to manage multicurrency wallets, FX, fiat and crypto payouts (including USDC), and customer relationships without spreadsheets or fragmented tools. The dashboard had to feel fast and trustworthy while surfacing balances, conversion, and settlement state clearly to finance and operations teams.",
@@ -27,9 +24,6 @@
     "description": "Dot Business is a business banking platform for businesses to manage their finances. I owned the frontend: the web dashboard teams used to manage finances and customers—UI architecture, performance, and data-heavy views—while backend and platform services were built by other engineers.",
     "technologies": ["React", "Next.js", "Tailwind CSS", "TanStack Query", "Redux Toolkit", "Framer Motion", "Docker"],
     "link": "https://businessbanking.dot.ai",
-    "contributions": [],
-    "results": [],
-    "challenges": [],
     "caseStudy": {
       "slug": "dot-business",
       "challenge": "On the frontend, the banking dashboard had to feel as polished as consumer apps: intuitive money-management workflows on desktop and mobile, fast first loads on slower networks, and clear client-side data visualization so businesses could trust what they saw—without pushing complexity onto users that belonged in APIs or services I did not own.",
@@ -49,9 +43,6 @@
     "description": "Qshelter is a real estate platform that helps users buy homes through direct payment, installment plans, or mortgage. The product spans a public website and an authenticated dashboard; I was brought onto a brownfield codebase to ship version 2 across both: a ground-up revamp of buggy, slow v1 experiences into TypeScript React apps with clearer architecture, stronger performance, and redesigned, mobile-friendly UI.",
     "technologies": ["React", "TypeScript", "Chakra UI", "TanStack Query", "Redux Toolkit", "Framer Motion", "Vercel"],
     "link": "https://qshelter.ng",
-    "contributions": [],
-    "results": [],
-    "challenges": [],
     "caseStudy": {
       "slug": "qshelter",
       "challenge": "Qshelter helps people buy houses with flexible purchase paths (direct payment, installment plans, or mortgage). It shipped as two surfaces (a marketing website and a logged-in dashboard), and both legacy codebases were unreliable and sluggish. Confusing state led to bugs; a mix of React Context and Redux caused extra rerenders and occasional stale data; duplicated markup made fixes risky. Mobile layouts lagged on both sides, and the product needed a credible v2 without rewriting the business behind the scenes.",
@@ -72,9 +63,6 @@
     "description": "MailMaker AI is a personal project: a web-based visual email template builder so people can ship responsive, client-safe HTML without hand-writing MJML. It compiles MJML in the browser and targets compatibility across major email clients.",
     "technologies": ["Next.js", "React", "Tailwind CSS", "MJML", "mjml-browser", "Zustand", "Framer Motion", "Lucide React"],
     "link": "https://business-email-generator.vercel.app/",
-    "contributions": [],
-    "results": [],
-    "challenges": [],
     "caseStudy": {
       "slug": "mailmaker-ai",
       "challenge": "I built MailMaker AI as a personal project to scratch my own itch: email HTML is fiddly, and I wanted a fast way to assemble layouts visually while still emitting markup that survives Outlook, Gmail, and the long tail of clients. The product had to feel like a real editor (add blocks, tweak styles, see results immediately) without asking users to learn MJML syntax up front.",
@@ -96,9 +84,6 @@
     "description": "Nebula PDF Engine is a personal open-source npm library I built: JSX-driven PDF generation with Flexbox-style layout, automatic pagination, and first-class tables, without Headless Chrome. It targets server-side and edge runtimes where a small footprint and predictable layout matter more than shipping a browser binary.",
     "technologies": ["TypeScript", "Preact", "Satori", "Resvg", "pdf-lib", "Sharp"],
     "link": "https://www.npmjs.com/package/nebula-pdf-engine",
-    "contributions": [],
-    "results": [],
-    "challenges": [],
     "caseStudy": {
       "slug": "nebula-pdf-engine",
       "challenge": "I started Nebula as a personal project because I could not find a PDF stack that performed well in both implementation and developer experience. Puppeteer was too heavy, and it did not work in my environment: workloads were predominantly server-side and could not run a Chromium browser. pdfmake was usable, but the developer experience was rough: layouts were expressed through table hacks, basics like border radius were unavailable, and images had to be inlined as base64, which made templates long and hard to maintain.",
