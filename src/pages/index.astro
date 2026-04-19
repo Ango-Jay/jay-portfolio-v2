@@ -5,7 +5,6 @@ import Layout from '../layouts/Layout.astro';
 import ProjectCard from "../components/cards/ProjectCard";
 import projects from "../data/projects.json";
 import ArticleCard from "../components/cards/ArticleCard";
-import '../styles/global.css';
 
 const DEVTO_USERNAME = import.meta.env.PUBLIC_DEVTO_USERNAME ?? 'angojay';
 const DEVTO_PROFILE_URL = `https://dev.to/${DEVTO_USERNAME}`;
@@ -56,7 +55,11 @@ try {
 		  </h4>
 			{projects.map((project) => (
 			  <ProjectCard
-				{...project}
+				title={project.title}
+				imageSrc={project.imageSrc}
+				description={project.description}
+				link={project.link}
+				caseStudy={project.caseStudy}
 			  />
 			))}
 		</section>

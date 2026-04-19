@@ -2,53 +2,117 @@
   {
     "title": "Rabafast",
     "imageSrc": "/rabafast_dashboard.png",
-    "description": "Rabafast is a multi-currency payment platform that enables merchants to do cross-border payouts, my responsibility was to build the dashboard which was a web based application that was used to manage the payments and the customers",
-    "technologies": ["React", "Next.js", "Tailwind CSS", "React Query", "Shadcn UI", "Zustand", "Supabase", "Vercel", "Framer Motion"],
-    "link": "https://rabafast.com",
+    "description": "Rabafast is a multi-currency payment platform for businesses (SMEs and larger companies) to run cross-border payouts. It supports multicurrency wallets, foreign-exchange conversion, and crypto payouts such as USDC. As senior frontend engineer, I spearheaded frontend development and delivered the web dashboard used to manage payments, wallets, and customers.",
+    "technologies": ["React", "Next.js", "Tailwind CSS", "TanStack Query", "Redux Toolkit", "Shadcn UI", "Framer Motion"],
+    "link": "https://app.rabafast.com",
     "contributions": [],
     "results": [],
-    "challenges": []
-    
-},
+    "challenges": [],
+    "caseStudy": {
+      "slug": "rabafast",
+      "challenge": "Businesses sending money across borders needed one place to manage multicurrency wallets, FX, fiat and crypto payouts (including USDC), and customer relationships without spreadsheets or fragmented tools. The dashboard had to feel fast and trustworthy while surfacing balances, conversion, and settlement state clearly to finance and operations teams.",
+      "technicalStrategy": "As senior frontend engineer, I spearheaded the business dashboard as a Next.js application with a component system aligned to Shadcn UI and Tailwind, using the same state split as Dot Business: TanStack Query for data straight from the APIs (wallets, balances, payouts, FX, and related resources), and Redux Toolkit for application state and complex form flows that stayed coherent across refreshes and multi-step payout work. Framer Motion was used sparingly for feedback on key flows.",
+      "keyFeaturesAndContributions": [
+        "Dashboard for monitoring wallets, payouts, balances, FX, and payment lifecycle across currencies (including crypto such as USDC)",
+        "Workflows for businesses and their customers tied to cross-border payouts and wallet activity",
+        "Reusable table, filter, and detail views tuned for dense financial data",
+        "TanStack Query for API-sourced data and Redux Toolkit for app and complex form state (same pattern as Dot Business), so lists and multi-step flows stayed reliable as companies scaled usage"
+      ],
+      "impact": "The dashboard became the operational hub for companies on Rabafast: teams could run payouts, wallet, and FX work in one application instead of patching together external tools, with a UI that stayed approachable as product scope grew."
+    }
+  },
   {
     "title": "Dot Business",
     "imageSrc": "/dotbusiness_dashboard.png",
-    "description": "Dot Business is a business banking platform that enables businesses to manage their finances, my responsibility was to build the dashboard which was a web based application that was used to manage the finances and the customers",
-    "technologies": ["React", "Next.js", "Tailwind CSS", "React Query", "Shadcn UI", "Zustand", "Supabase", "Vercel", "Framer Motion"],
+    "description": "Dot Business is a business banking platform for businesses to manage their finances. I owned the frontend: the web dashboard teams used to manage finances and customers—UI architecture, performance, and data-heavy views—while backend and platform services were built by other engineers.",
+    "technologies": ["React", "Next.js", "Tailwind CSS", "TanStack Query", "Redux Toolkit", "Framer Motion", "Docker"],
     "link": "https://businessbanking.dot.ai",
     "contributions": [],
     "results": [],
-    "challenges": []
+    "challenges": [],
+    "caseStudy": {
+      "slug": "dot-business",
+      "challenge": "On the frontend, the banking dashboard had to feel as polished as consumer apps: intuitive money-management workflows on desktop and mobile, fast first loads on slower networks, and clear client-side data visualization so businesses could trust what they saw—without pushing complexity onto users that belonged in APIs or services I did not own.",
+      "technicalStrategy": "I built the dashboard UI in Next.js with Tailwind CSS. TanStack Query loaded and cached data that came straight from the banking APIs—account information and similar read-heavy resources (contracts owned elsewhere). Redux Toolkit managed application state and complex form flows that had to stay coherent and survive refreshes, including multi-step work like bulk transfers. Performance work was entirely in the browser bundle and assets: route- and component-level code splitting, plus image and video optimization on the heaviest views. Framer Motion was used sparingly so motion helped readability without bloating the client. For deployment I packaged the Next.js app in Docker using standalone output (next.config output: \"standalone\") and a multi-stage Dockerfile so the production image landed around 85MB instead of roughly 2GB without standalone—smaller pulls, faster CI/CD, and a clearer story for DevOps. I wrote up the approach in more detail here: https://dev.to/angojay/optimizing-nextjs-docker-images-with-standalone-mode-2nnh",
+      "keyFeaturesAndContributions": [
+        "Spearheaded the frontend development of the company's business banking application, architecting intuitive workflows, optimizing mobile performance, and building highly interactive data visualization dashboards, used by over a hundred businesses.",
+        "Implemented code splitting and image and video optimization techniques to reduce the initial load of a core company product by 25%, resulting in a 3-second faster loading time on mobile devices.",
+        "Architected scalable and maintainable front-end solutions, aligning business goals with the UI while partnering with design and back-end teams on contracts, handoffs, and integration—without owning server or data-store implementation.",
+        "Owned the frontend Docker deployment path: Next.js standalone mode plus multi-stage builds cut the runnable image from roughly 2GB down to about 85MB."
+      ],
+      "impact": "The banking web app’s frontend supports 100+ businesses day to day, with measurable mobile wins (roughly 25% lighter initial load and about 3 seconds faster to usable UI on key flows). Lean Docker images (about 85MB vs roughly 2GB pre-standalone) made releases and registry operations materially faster."
+    }
   },
   {
-    "title":"Qshelter",
-    "imageSrc":"/qshelter.png",
-    "description":"Qshelter is a platform that enables businesses to manage their finances, my responsibility was to build the dashboard which was a web based application that was used to manage the finances and the customers",
-    "technologies":["React","Next.js","Tailwind CSS","React Query","Shadcn UI","Zustand","Supabase","Vercel","Framer Motion"],
-    "link":"https://qshelter.ng",
+    "title": "Qshelter",
+    "imageSrc": "/qshelter.png",
+    "description": "Qshelter is a real estate platform that helps users buy homes through direct payment, installment plans, or mortgage. The product spans a public website and an authenticated dashboard; I was brought onto a brownfield codebase to ship version 2 across both: a ground-up revamp of buggy, slow v1 experiences into TypeScript React apps with clearer architecture, stronger performance, and redesigned, mobile-friendly UI.",
+    "technologies": ["React", "TypeScript", "Chakra UI", "TanStack Query", "Redux Toolkit", "Framer Motion", "Vercel"],
+    "link": "https://qshelter.ng",
     "contributions": [],
     "results": [],
-    "challenges": []
+    "challenges": [],
+    "caseStudy": {
+      "slug": "qshelter",
+      "challenge": "Qshelter helps people buy houses with flexible purchase paths (direct payment, installment plans, or mortgage). It shipped as two surfaces (a marketing website and a logged-in dashboard), and both legacy codebases were unreliable and sluggish. Confusing state led to bugs; a mix of React Context and Redux caused extra rerenders and occasional stale data; duplicated markup made fixes risky. Mobile layouts lagged on both sides, and the product needed a credible v2 without rewriting the business behind the scenes.",
+      "technicalStrategy": "I led the v2 frontend for the website and the dashboard in React and TypeScript with Chakra UI for layout and theming, Framer Motion for interaction polish, and deployment on Vercel. In the dashboard, data from the APIs moved through TanStack Query; Redux Toolkit owned application and form state, replacing the old Context-plus-Redux tangle with a clearer split that reduced unnecessary renders and stale reads. The same performance discipline applied to the marketing site: correcting patterns that triggered extra rerenders, refactoring duplicated code into shared components, and tightening responsive behavior so both the site and the app felt usable on phones, not only desktop.",
+      "keyFeaturesAndContributions": [
+        "Owned the brownfield revamp to Qshelter v2 across the public website and the authenticated dashboard: new architecture and UI on top of existing product constraints",
+        "Replaced the problematic Context + Redux combination with TanStack Query for server/API state and Redux Toolkit for client-side state, cutting rerenders and stale data issues",
+        "Performance pass across the website and dashboard: fixed render patterns, validated state boundaries, and removed redundant work in hot paths",
+        "Redesigned the experience with Chakra UI and refactored duplicated UI into reusable components shared where it made sense across both surfaces",
+        "Improved mobile responsiveness substantially so marketing pages and in-app flows worked comfortably on small screens"
+      ],
+      "impact": "Version 2 shipped as a faster, more dependable experience for people exploring and buying homes on both the website and the dashboard: fewer bugs and snappier interactions, and a codebase that was easier to extend as listing and purchase flows evolved."
+    }
   },
   {
     "title": "MailMaker AI",
     "imageSrc": "/mailmaker_ai.png",
-    "description": "MailMaker AI is a modern, web-based email template builder designed to help users create responsive, high-quality emails without writing code. It leverages MJML (Mailjet Markup Language) under the hood to ensure that the generated HTML is compatible across all major email clients.",
-    "technologies": ["React", "Next.js", "MJML", "Tailwind CSS", "React Query",  "Zustand", "Framer Motion"],
+    "description": "MailMaker AI is a personal project: a web-based visual email template builder so people can ship responsive, client-safe HTML without hand-writing MJML. It compiles MJML in the browser and targets compatibility across major email clients.",
+    "technologies": ["Next.js", "React", "Tailwind CSS", "MJML", "mjml-browser", "Zustand", "Framer Motion", "Lucide React"],
     "link": "https://business-email-generator.vercel.app/",
     "contributions": [],
     "results": [],
-    "challenges": []
+    "challenges": [],
+    "caseStudy": {
+      "slug": "mailmaker-ai",
+      "challenge": "I built MailMaker AI as a personal project to scratch my own itch: email HTML is fiddly, and I wanted a fast way to assemble layouts visually while still emitting markup that survives Outlook, Gmail, and the long tail of clients. The product had to feel like a real editor (add blocks, tweak styles, see results immediately) without asking users to learn MJML syntax up front.",
+      "technicalStrategy": "The app is a Next.js App Router project with React, Tailwind CSS, Framer Motion, and Lucide for UI. The editor centers on a Zustand store (for example lib/editor/store.ts) that holds the template as serialized JSON: a tree of MJElement nodes. Adding components from the left sidebar or editing properties in the right sidebar mutates that tree. A recursive transformer (lib/editor/transformer.ts) walks the JSON and produces a valid MJML string, which mjml-browser turns into email-safe HTML. The canvas renders that HTML inside an isolated iframe, with injected scripts so elements can be selected and hovered without leaking styles into the host app.",
+      "keyFeaturesAndContributions": [
+        "Visual editor: click-to-add primitives (Text, Image, Button, Divider) and structural blocks (Sections, Columns)",
+        "Pre-built composite cards (signatures, testimonials, hero banners) for faster assembly",
+        "Live preview: MJML to HTML in real time inside a sandboxed iframe",
+        "Responsive testing: switch desktop and mobile viewports before sending",
+        "Context-aware property panel: select any canvas element to edit content, color, typography, and spacing",
+        "End-to-end pipeline: JSON state, MJML compilation, and secure iframe rendering with selection affordances"
+      ],
+      "impact": "MailMaker lowers the barrier to production-quality campaigns and transactional layouts: designers get immediate feedback, and the MJML layer keeps output closer to what major clients expect than ad-hoc HTML alone."
+    }
   },
   {
     "title": "Nebula PDF Generator",
     "imageSrc": "/nebula-pdf-engine.png",
-    "description": "Nebula PDF Engine: A fast, lightweight, JSX-driven PDF generator with a smart layout engine, automatic pagination, and first-class table support.",
-    "technologies": ["Typescript", "Preact"],
+    "description": "Nebula PDF Engine is a personal open-source npm library I built: JSX-driven PDF generation with Flexbox-style layout, automatic pagination, and first-class tables, without Headless Chrome. It targets server-side and edge runtimes where a small footprint and predictable layout matter more than shipping a browser binary.",
+    "technologies": ["TypeScript", "Preact", "Satori", "Resvg", "pdf-lib", "Sharp"],
     "link": "https://www.npmjs.com/package/nebula-pdf-engine",
     "contributions": [],
     "results": [],
-    "challenges": []
+    "challenges": [],
+    "caseStudy": {
+      "slug": "nebula-pdf-engine",
+      "challenge": "I started Nebula as a personal project because I could not find a PDF stack that performed well in both implementation and developer experience. Puppeteer was too heavy, and it did not work in my environment: workloads were predominantly server-side and could not run a Chromium browser. pdfmake was usable, but the developer experience was rough: layouts were expressed through table hacks, basics like border radius were unavailable, and images had to be inlined as base64, which made templates long and hard to maintain.",
+      "technicalStrategy": "Nebula PDF Engine is a server-side generator that turns React/JSX templates into multi-page PDFs without Puppeteer. Layout is powered by Satori (Yoga-backed Flexbox) so you work with familiar primitives: Page, Box, Text, Image, and a schema-driven Table. Rendering uses Resvg for SVG work, pdf-lib for assembling the document, and Sharp for scaling remote images and SVGs at configurable DPI. Preact is the JSX runtime. A dedicated layout engine measures content, splits overflow at safe word boundaries, paginates tables with repeating headers and atomic rows, and supports both automatic overflow and explicit multi-page documents. The package is intentionally small and edge-friendly compared to Chromium-based stacks, and ships optional NestJS integration (NebulaPdfModule) for injecting a PDF service in Nest apps.",
+      "keyFeaturesAndContributions": [
+        "Standard JSX API (Page, Box, Text, Image, Table) with Preact; TypeScript-friendly configuration (jsxImportSource preact)",
+        "Flexbox layout via Satori, multi-page engine with automatic overflow and manual pagination for sectioned documents",
+        "First-class Table primitive: schema-driven columns, header repetition across pages, atomic rows, flexible widths (points, percentages, flex)",
+        "Layout pipeline: measurement pass, bin packing, table-aware pagination, and splittable text vs atomic rows/images/boxes",
+        "High-density assets: Sharp-based scaling, optional device pixel ratio for export quality; Rust-backed rendering path via Resvg",
+        "Published as MIT-licensed npm package nebula-pdf-engine with docs and quickstart for standalone Node and NestJS consumers"
+      ],
+      "impact": "The library gives teams a deterministic, Flexbox-native PDF workflow without Puppeteer’s footprint or pdfmake’s layout constraints. It fits invoices, automated reports, and dense shipping-style documents in serverless and edge environments where a small install and fast cold starts matter."
+    }
   }
 ]
 

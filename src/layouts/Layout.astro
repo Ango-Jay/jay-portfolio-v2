@@ -2,6 +2,17 @@
 import Footer from "../components/sections/Footer.astro";
 import Header from "../components/sections/Header";
 import ThemePicker from "../components/ThemePicker";
+import "../styles/global.css";
+
+interface Props {
+	pageTitle?: string;
+	pageDescription?: string;
+}
+
+const {
+	pageTitle = "Ango Jeffrey",
+	pageDescription = "Ango Jeffrey is a Senior Frontend Engineer with a passion for building scalable, user friendly and elegant web and mobile applications.",
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -11,8 +22,8 @@ import ThemePicker from "../components/ThemePicker";
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<meta name="description" content="Ango Jeffrey is a Senior Frontend Engineer with a passion for building scalable, user friendly and elegant web and mobile applications." />
-		<title>Ango Jeffrey</title>
+		<meta name="description" content={pageDescription} />
+		<title>{pageTitle}</title>
 		<script type="application/ld+json">
 			{
 			  "@context": "https://schema.org",
