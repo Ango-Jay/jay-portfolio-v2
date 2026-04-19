@@ -13,7 +13,7 @@
         "Dashboard for monitoring wallets, payouts, balances, FX, and payment lifecycle across currencies (including crypto such as USDC)",
         "Workflows for businesses and their customers tied to cross-border payouts and wallet activity",
         "Reusable table, filter, and detail views tuned for dense financial data",
-        "TanStack Query for API-sourced data and Redux Toolkit for app and complex form state (same pattern as Dot Business), so lists and multi-step flows stayed reliable as companies scaled usage"
+        "TanStack Query for API-sourced data and Redux Toolkit for app and complex form state, so lists and multi-step flows stayed reliable as companies scaled usage"
       ],
       "impact": "The dashboard became the operational hub for companies on Rabafast: teams could run payouts, wallet, and FX work in one application instead of patching together external tools, with a UI that stayed approachable as product scope grew."
     }
