@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>
+<!--
+  Keep these URLs in sync with:
+  - src/pages/index.astro (home)
+  - caseStudy.slug values in src/data/projects.json
+  - src/pages/case-study/[slug].astro routes
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://angojay.com/</loc>
+  </url>
+  <url>
+    <loc>https://angojay.com/case-study/nebula-pdf-engine</loc>
+  </url>
+  <url>
+    <loc>https://angojay.com/case-study/rabafast</loc>
+  </url>
+  <url>
+    <loc>https://angojay.com/case-study/dot-business</loc>
+  </url>
+  <url>
+    <loc>https://angojay.com/case-study/qshelter</loc>
+  </url>
+  <url>
+    <loc>https://angojay.com/case-study/mailmaker-ai</loc>
+  </url>
+</urlset>
