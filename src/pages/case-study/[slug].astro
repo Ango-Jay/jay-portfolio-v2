@@ -22,9 +22,31 @@ const { project } = Astro.props;
 const { title, imageSrc, description, link, technologies, caseStudy } = project;
 const pageTitle = `Case Study: ${title} · Ango Jeffrey`;
 const pageDescription = `${title} — ${description.slice(0, 155)}${description.length > 155 ? '…' : ''}`;
+const siteOrigin = Astro.site?.origin ?? "https://angojay.com";
+const pageUrl = new URL(`/case-study/${caseStudy.slug}`, siteOrigin).href;
+const projectImageUrl = new URL(imageSrc, siteOrigin).href;
+
+const creativeWorkJsonLd = {
+	"@context": "https://schema.org",
+	"@type": "CreativeWork",
+	name: title,
+	description,
+	url: pageUrl,
+	image: projectImageUrl,
+	author: {
+		"@type": "Person",
+		name: "Ango Jeffrey",
+		url: siteOrigin,
+	},
+};
 ---
 
-<Layout pageTitle={pageTitle} pageDescription={pageDescription}>
+<Layout
+	pageTitle={pageTitle}
+	pageDescription={pageDescription}
+	ogType="article"
+	jsonLd={creativeWorkJsonLd}
+>
 	<article class="w-full container mx-auto px-4 sm:px-6 lg:px-10 py-10 lg:py-14">
 		<div class="relative max-w-7xl mx-auto lg:grid lg:grid-cols-12 lg:gap-x-12 lg:gap-y-0">
 			<!-- Left: title, image, summary — sticky on desktop (grid stretch gives this column full row height) -->
