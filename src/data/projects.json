@@ -1,5 +1,26 @@
 [
   {
+    "title": "Nebula PDF Generator",
+    "imageSrc": "/nebula-pdf-engine.png",
+    "description": "Nebula PDF Engine is a personal open-source npm library I built: JSX-driven PDF generation with Flexbox-style layout, automatic pagination, and first-class tables, without Headless Chrome. It targets server-side and edge runtimes where a small footprint and predictable layout matter more than shipping a browser binary.",
+    "technologies": ["TypeScript", "Preact", "Satori", "Resvg", "pdf-lib", "Sharp"],
+    "link": "https://www.npmjs.com/package/nebula-pdf-engine",
+    "caseStudy": {
+      "slug": "nebula-pdf-engine",
+      "challenge": "I started Nebula as a personal project because I could not find a PDF stack that performed well in both implementation and developer experience. Puppeteer was too heavy, and it did not work in my environment: workloads were predominantly server-side and could not run a Chromium browser. pdfmake was usable, but the developer experience was rough: layouts were expressed through table hacks, basics like border radius were unavailable, and images had to be inlined as base64, which made templates long and hard to maintain.",
+      "technicalStrategy": "Nebula PDF Engine is a server-side generator that turns React/JSX templates into multi-page PDFs without Puppeteer. Layout is powered by Satori (Yoga-backed Flexbox) so you work with familiar primitives: Page, Box, Text, Image, and a schema-driven Table. Rendering uses Resvg for SVG work, pdf-lib for assembling the document, and Sharp for scaling remote images and SVGs at configurable DPI. Preact is the JSX runtime. A dedicated layout engine measures content, splits overflow at safe word boundaries, paginates tables with repeating headers and atomic rows, and supports both automatic overflow and explicit multi-page documents. The package is intentionally small and edge-friendly compared to Chromium-based stacks, and ships optional NestJS integration (NebulaPdfModule) for injecting a PDF service in Nest apps.",
+      "keyFeaturesAndContributions": [
+        "Standard JSX API (Page, Box, Text, Image, Table) with Preact; TypeScript-friendly configuration (jsxImportSource preact)",
+        "Flexbox layout via Satori, multi-page engine with automatic overflow and manual pagination for sectioned documents",
+        "First-class Table primitive: schema-driven columns, header repetition across pages, atomic rows, flexible widths (points, percentages, flex)",
+        "Layout pipeline: measurement pass, bin packing, table-aware pagination, and splittable text vs atomic rows/images/boxes",
+        "High-density assets: Sharp-based scaling, optional device pixel ratio for export quality; Rust-backed rendering path via Resvg",
+        "Published as MIT-licensed npm package nebula-pdf-engine with docs and quickstart for standalone Node and NestJS consumers"
+      ],
+      "impact": "The library gives teams a deterministic, Flexbox-native PDF workflow without Puppeteer’s footprint or pdfmake’s layout constraints. It fits invoices, automated reports, and dense shipping-style documents in serverless and edge environments where a small install and fast cold starts matter."
+    }
+  },
+  {
     "title": "Rabafast",
     "imageSrc": "/rabafast_dashboard.png",
     "description": "Rabafast is a multi-currency payment platform for businesses (SMEs and larger companies) to run cross-border payouts. It supports multicurrency wallets, foreign-exchange conversion, and crypto payouts such as USDC. As senior frontend engineer, I spearheaded frontend development and delivered the web dashboard used to manage payments, wallets, and customers.",
@@ -76,27 +97,6 @@
         "End-to-end pipeline: JSON state, MJML compilation, and secure iframe rendering with selection affordances"
       ],
       "impact": "MailMaker lowers the barrier to production-quality campaigns and transactional layouts: designers get immediate feedback, and the MJML layer keeps output closer to what major clients expect than ad-hoc HTML alone."
-    }
-  },
-  {
-    "title": "Nebula PDF Generator",
-    "imageSrc": "/nebula-pdf-engine.png",
-    "description": "Nebula PDF Engine is a personal open-source npm library I built: JSX-driven PDF generation with Flexbox-style layout, automatic pagination, and first-class tables, without Headless Chrome. It targets server-side and edge runtimes where a small footprint and predictable layout matter more than shipping a browser binary.",
-    "technologies": ["TypeScript", "Preact", "Satori", "Resvg", "pdf-lib", "Sharp"],
-    "link": "https://www.npmjs.com/package/nebula-pdf-engine",
-    "caseStudy": {
-      "slug": "nebula-pdf-engine",
-      "challenge": "I started Nebula as a personal project because I could not find a PDF stack that performed well in both implementation and developer experience. Puppeteer was too heavy, and it did not work in my environment: workloads were predominantly server-side and could not run a Chromium browser. pdfmake was usable, but the developer experience was rough: layouts were expressed through table hacks, basics like border radius were unavailable, and images had to be inlined as base64, which made templates long and hard to maintain.",
-      "technicalStrategy": "Nebula PDF Engine is a server-side generator that turns React/JSX templates into multi-page PDFs without Puppeteer. Layout is powered by Satori (Yoga-backed Flexbox) so you work with familiar primitives: Page, Box, Text, Image, and a schema-driven Table. Rendering uses Resvg for SVG work, pdf-lib for assembling the document, and Sharp for scaling remote images and SVGs at configurable DPI. Preact is the JSX runtime. A dedicated layout engine measures content, splits overflow at safe word boundaries, paginates tables with repeating headers and atomic rows, and supports both automatic overflow and explicit multi-page documents. The package is intentionally small and edge-friendly compared to Chromium-based stacks, and ships optional NestJS integration (NebulaPdfModule) for injecting a PDF service in Nest apps.",
-      "keyFeaturesAndContributions": [
-        "Standard JSX API (Page, Box, Text, Image, Table) with Preact; TypeScript-friendly configuration (jsxImportSource preact)",
-        "Flexbox layout via Satori, multi-page engine with automatic overflow and manual pagination for sectioned documents",
-        "First-class Table primitive: schema-driven columns, header repetition across pages, atomic rows, flexible widths (points, percentages, flex)",
-        "Layout pipeline: measurement pass, bin packing, table-aware pagination, and splittable text vs atomic rows/images/boxes",
-        "High-density assets: Sharp-based scaling, optional device pixel ratio for export quality; Rust-backed rendering path via Resvg",
-        "Published as MIT-licensed npm package nebula-pdf-engine with docs and quickstart for standalone Node and NestJS consumers"
-      ],
-      "impact": "The library gives teams a deterministic, Flexbox-native PDF workflow without Puppeteer’s footprint or pdfmake’s layout constraints. It fits invoices, automated reports, and dense shipping-style documents in serverless and edge environments where a small install and fast cold starts matter."
     }
   }
 ]
