@@ -3,12 +3,16 @@
 <!--
   Keep these URLs in sync with:
   - src/pages/index.astro (home)
+  - src/pages/blogs.astro
   - caseStudy.slug values in src/data/projects.json
   - src/pages/case-study/[slug].astro routes
 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://angojay.com/</loc>
+  </url>
+  <url>
+    <loc>https://angojay.com/blogs</loc>
   </url>
   <url>
     <loc>https://angojay.com/case-study/nebula-pdf-engine</loc>

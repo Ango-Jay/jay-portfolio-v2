@@ -5,40 +5,9 @@ import Layout from '../layouts/Layout.astro';
 import ProjectCard from "../components/cards/ProjectCard";
 import projects from "../data/projects.json";
 import ArticleCard from "../components/cards/ArticleCard";
+import { fetchDevToArticles } from "../lib/devto";
 
-const DEVTO_USERNAME = import.meta.env.PUBLIC_DEVTO_USERNAME ?? 'angojay';
-const DEVTO_PROFILE_URL = `https://dev.to/${DEVTO_USERNAME}`;
-
-type DevToArticle = {
-	title: string;
-	url: string;
-	cover_image: string | null;
-	social_image: string;
-};
-
-let articles: Array<{
-	title: string;
-	imageSrc: string;
-	platform: string;
-	link: string;
-}> = [];
-
-try {
-	const res = await fetch(
-		`https://dev.to/api/articles?username=${encodeURIComponent(DEVTO_USERNAME)}&per_page=5`
-	);
-	if (res.ok) {
-		const data: DevToArticle[] = await res.json();
-		articles = data.slice(0, 5).map((a) => ({
-			title: a.title,
-			imageSrc: a.cover_image ?? a.social_image ?? '/dev_to_logo.png',
-			platform: 'Dev.to',
-			link: a.url,
-		}));
-	}
-} catch {
-	// build continues with no articles if the API is unreachable
-}
+const articles = await fetchDevToArticles({ limit: 5 });
 ---
 
 <Layout pageTitle="Ango Jeffrey · Senior Frontend Engineer">
@@ -76,9 +45,7 @@ try {
 			))}
 			<div class="flex w-full justify-center pt-2">
 				<a
-					href={DEVTO_PROFILE_URL}
-					target="_blank"
-					rel="noopener noreferrer"
+					href="/blogs"
 					class="text-sm font-medium text-light-purple hover:underline"
 				>
 					View more
