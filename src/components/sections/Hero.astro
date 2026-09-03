@@ -1,9 +1,42 @@
 ---
 import ContentList from "../ContentList";
 import Contact from "../Contact";
+import { Image } from "astro:assets";
 ---
 
 <div class="w-full lg:w-[50%] flex flex-col pt-[72px] lg:h-screen lg:sticky lg:top-0">
+<div class="w-full flex">
+    <div
+      class="group relative h-[150px] w-[150px] shrink-0 [perspective:720px]"
+    >
+      <div
+        class="relative block h-full w-full rounded-full transition-transform duration-500 ease-in-out [transform-style:preserve-3d] motion-reduce:transition-none lg:group-hover:[transform:rotateY(180deg)] motion-reduce:lg:group-hover:[transform:none]"
+      >
+        <div
+          class="absolute inset-0 overflow-hidden rounded-full border border-ink bg-ink p-1 [backface-visibility:hidden] dark:border-white"
+        >
+          <Image
+            src="/Ango_Jeffrey_Profile.jpg"
+            class="h-full w-full rounded-full object-cover"
+            alt="Ango Jeffrey"
+            width={150}
+            height={150}
+          />
+        </div>
+        <div
+          class="absolute inset-0 overflow-hidden rounded-full border border-light-purple bg-white p-1 [backface-visibility:hidden] [transform:rotateY(180deg)] dark:bg-ink"
+        >
+          <Image
+            src="/Ango_Jeffrey_Profile.jpg"
+            class="h-full w-full rounded-full object-cover"
+            alt=""
+            width={150}
+            height={150}
+          />
+        </div>
+      </div>
+    </div>
+</div>
     <h2 class="text-3xl md:text-4xl lg:text-6xl xl:text-8xl font-bold mb-4 text-ink dark:text-zinc-50">
         Ango Jeffrey
     </h2>
