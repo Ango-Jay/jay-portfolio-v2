@@ -1,5 +1,26 @@
 [
   {
+    "title": "Zapspace",
+    "imageSrc": "/zapspace.png",
+    "description": "Zapspace is a personal product I built end to end: one workspace for notes, audio, images, and video, then tasks and AI agents that work from what you've captured. Capture an idea the moment it hits, connect it to follow-ups, and act in the same space.",
+    "technologies": ["TypeScript", "TanStack Start", "Nitro"],
+    "link": "https://www.zapspace.tech/",
+    "caseStudy": {
+      "slug": "zapspace",
+      "challenge": "Ideas arrive as text, voice, or media, but follow-through usually lives somewhere else. Notes apps, task lists, and AI tools stayed disconnected, so context got lost and agents had no coherent brain built from what users had already captured. Students, professionals, and executives needed one place to go from spark to done without juggling tabs.",
+      "technicalStrategy": "I designed and implemented the full architecture myself on TypeScript with TanStack Start and Nitro as the server runtime. The product model centers on capture (rich notes and Markdown, voice, images, and video), connect (linking notes to tasks and agents so follow-ups keep their context), and act (finishing work in the same workspace, including research that agents turn into executable tasks).",
+      "keyFeaturesAndContributions": [
+        "Owned end-to-end product architecture and implementation for Zapspace",
+        "Notes workspace with rich text and Markdown so ideas are captured the moment they appear",
+        "Media and voice capture so audio, images, and video live beside notes in one space",
+        "Tasks linked to the notes they came from, keeping deadlines in context",
+        "AI agent connections that read and manage the workspace as a shared brain",
+        "Research-to-tasks flows so exploration becomes a plan users can execute"
+      ],
+      "impact": "Zapspace ships as a single capture-to-action workspace: notes, media, tasks, and agents in one product, aimed at how students, professionals, and executives actually work, including offline-friendly moments when context would otherwise scatter."
+    }
+  },
+  {
     "title": "Nebula PDF Generator",
     "imageSrc": "/nebula-pdf-engine.png",
     "description": "Nebula PDF Engine is a personal open-source npm library I built: JSX-driven PDF generation with Flexbox-style layout, automatic pagination, and first-class tables, without Headless Chrome. It targets server-side and edge runtimes where a small footprint and predictable layout matter more than shipping a browser binary.",
