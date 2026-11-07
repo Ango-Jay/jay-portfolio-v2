@@ -1,0 +1,21 @@
+{
+  "name": "Ango Jeffrey",
+  "short_name": "Ango Jeffrey",
+  "description": "Ango Jeffrey is a Senior Frontend Engineer with a passion for building scalable, user friendly and elegant web and mobile applications.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#090040",
+  "theme_color": "#090040",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
